@@ -1,8 +1,10 @@
 # Boxdawn
 
-**Waste-axis observability for AI agents.** We measure what your agents spend and never use — then show it back to you over time.
+**Open your AI agents' black box. The waste is between your agents, not inside them.**
 
-Most observability tools answer *"what did my agent do?"* Boxdawn answers a narrower question that nobody was billing for: **which of those tokens did you pay for twice?**
+APMs watch services. Trace tools watch a single agent. Gateways watch calls. The failure that costs the most in production — agents doing work that was already done — happens in the gaps between them.
+
+**[Try it on one trace →](https://boxdawn.com/analyze)** — no install, no account.
 
 ---
 
@@ -10,34 +12,33 @@ Most observability tools answer *"what did my agent do?"* Boxdawn answers a narr
 
 | | |
 |---|---|
-| **Hosted analyzer** | Drop a trace at **[boxdawn.com/analyze](https://boxdawn.com/analyze)** — no account, no install. Nothing is stored unless you ask for it. |
-| **Measurements dashboard** | Sign in and your waste rate accumulates per project, by the day your sessions actually ran. |
-| **API keys** | Issue a key and send traces from CI or a script. Revoke it from the same screen. |
-| **Open-source CLI** | `pip install "boxdawn[detect]"` — the detectors run locally, on your machine, on your data. |
+| **Hosted analyzer** | Drop a trace at **[boxdawn.com/analyze](https://boxdawn.com/analyze)** and get the full report in the browser. Nothing is stored unless you ask for it. |
+| **Measurements dashboard** | Sign in and your waste rate accumulates per project, keyed on the day your sessions actually ran — so a backfill of old traces lands on the days they happened. |
+| **API keys** | Issue a key per project and revoke it from the same screen, so traces can arrive with no browser in the loop. |
+| **Open-source CLI** | `pip install "boxdawn[detect]"` — the deterministic detectors run on your machine, with no API calls and no signup. |
 
-## What we are building
-
-The product is a chain, and we are open about where we are on it:
+## Where we are on the chain
 
 **monitor → detect → alert → auto-fix → auto-optimize + govern**
 
-- **detect** is what ships today: four deterministic detectors over one trace, priced from the real `usage` fields when the trace carries them.
-- **alert** is pre-registered and not yet built. The rule compares a day against your own previous qualifying day, not against a fixed threshold — *"this week is worse than your own last week"* is the question worth answering.
-- **monitor**, **auto-fix**, **auto-optimize** and **govern** follow. Real-time monitoring, loop detection, visual session flow and latency work all live in this part of the chain.
+**Detection is the link that runs today**, as a service and as a library. The rest is being built in that order, because each link needs the one before it to be trustworthy first.
 
-If a capability is not in the list above, we have not built it. We would rather you find that out here than after you install something.
+Next up: baseline alerts that compare a project against **its own** previous measurement rather than a fixed threshold — *"this week is worse than your own last week"* is the question worth answering. Then real-time monitoring, loop detection, visual session flow, and latency alongside cost.
 
-## How we work
+Our [product page](https://boxdawn.com/product) keeps the current split of what runs and what is being built, so you can check it rather than take our word for it.
 
-- **Measured or not stated.** Every number on [boxdawn.com](https://boxdawn.com) carries the corpus it came from and the date it was measured. Where a claim has a confidence interval, the interval is printed next to it.
-- **Reproducible.** The report on our product page was produced from a publicly published trace, so anyone can run the same command and check us.
-- **Local-first where it can be.** The deterministic detectors need no network. The semantic pass is opt-in, costs money, and says so.
+## Measured, and checkable
+
+Four deterministic detectors — repeated tool cascades, re-sent context, redundant reads, duplicate creation — plus an opt-in LLM-as-judge pass for the pairs a byte comparison cannot separate.
+
+Measured across **16,864 sessions in three public corpora**. Every number we publish names the corpus it came from and the date it was measured, and the report on our product page was produced from a publicly published trace — so anyone can run the same command and check the figure.
 
 ## Links
 
 - **[boxdawn.com](https://boxdawn.com)** — the product
-- **[boxdawn/boxdawn](https://github.com/boxdawn/boxdawn)** — the open-source detectors
+- **[boxdawn/boxdawn](https://github.com/boxdawn/boxdawn)** — the analyzer, open source
 - **[PyPI](https://pypi.org/project/boxdawn/)** — `pip install "boxdawn[detect]"`
 - Questions and bug reports: **[GitHub Issues](https://github.com/boxdawn/boxdawn/issues)**
 
-Boxdawn is a startup based in Seoul, South Korea, founded by [Sewon Jeon](https://x.com/imwon_dev).
+Boxdawn is a startup in Seoul, South Korea, founded by [Sewon Jeon](https://x.com/imwon_dev).
+
