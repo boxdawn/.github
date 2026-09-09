@@ -15,7 +15,7 @@ APMs watch services. Trace tools watch a single agent. Gateways watch calls. The
 | **Hosted analyzer** | Drop a trace at **[boxdawn.com/analyze](https://boxdawn.com/analyze)** and get the full report in the browser. Nothing is stored unless you ask for it. |
 | **Measurements dashboard** | Sign in and your waste rate accumulates per project, keyed on the day your sessions actually ran, so a backfill of old traces lands on the days they happened. |
 | **API keys** | Issue a key per project and revoke it from the same screen, so traces can arrive with no browser in the loop. |
-| **Open-source CLI** | `pip install "boxdawn[detect]"`. The deterministic detectors run on your machine, with no API calls and no signup. |
+| **Open-source CLI** | `pip install boxdawn`. The deterministic detectors run on your machine, with no API calls and no signup. |
 
 ## Where we are on the chain
 
@@ -37,9 +37,10 @@ Measured across **17,881 traces in four public corpora**, one of which we did no
 
 - **[boxdawn.com](https://boxdawn.com)**: the product
 - **[boxdawn/boxdawn](https://github.com/boxdawn/boxdawn)**: the analyzer, open source
-- **[PyPI](https://pypi.org/project/boxdawn/)**: `pip install "boxdawn[detect]"`
+- **[PyPI](https://pypi.org/project/boxdawn/)**: `pip install boxdawn`
 - Questions and bug reports: **[GitHub Issues](https://github.com/boxdawn/boxdawn/issues)**
 
 Boxdawn is a startup in Seoul, South Korea, founded by [Sewon Jeon](https://x.com/imwon_dev).
+
 
 
