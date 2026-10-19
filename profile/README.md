@@ -16,6 +16,7 @@ APMs watch services. Trace tools watch a single agent. Gateways watch calls. The
 | **Measurements dashboard** | Sign in and your waste rate accumulates per project, keyed on the day your sessions actually ran, so a backfill of old traces lands on the days they happened. |
 | **API keys** | Issue a key per project and revoke it from the same screen, so traces can arrive with no browser in the loop. |
 | **Open-source CLI** | `pip install boxdawn`. The deterministic detectors run on your machine, with no API calls and no signup. |
+| **Budget guard for Claude Code** | `boxdawn guard install --cap-usd 5`. A local hook that stops a Claude Code session once it has spent a dollar cap you set. It makes no judgment about waste, and nothing is sent. |
 
 ## Where we are on the chain
 
